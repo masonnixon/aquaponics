@@ -1,0 +1,4 @@
+#!/bin/bash   
+STR="Starting the temperature sensor probe..."
+echo $STR
+python thermo.py
