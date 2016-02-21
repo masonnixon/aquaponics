@@ -1,4 +1,6 @@
 #!/bin/bash   
+PATH_TO_BIN="/home/pi/repo/aquaponics.git/sensors/"
 STR="Starting the temperature sensor probe..."
 echo $STR
+cd $PATH_TO_BIN
 python thermo.py
