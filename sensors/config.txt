@@ -1,0 +1,3 @@
+#28-000006396de6 is the air sensor by the RPi
+#28-000006de6084 is the air sensor by the fish tank
+#28-000006de6769 is the water sensor in the fish tank
