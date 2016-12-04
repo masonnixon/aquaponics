@@ -1,3 +1,9 @@
+Set up One Wire devices
+sudo modprobe w1-gpio
+sudo modprobe w1-therm
+ls /sys/bus/w1/devices
+
+
 Run 
 ln -s /path/to/binary /bin/cheese
 to create global executable (symbolic link to an executable).
