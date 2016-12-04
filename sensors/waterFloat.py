@@ -9,32 +9,35 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 #GPIO.remove_event_detect(23)
 
-global currentState
-currentState = 1
+#global currentState
+#currentState = 1
 
 def printFunction(channel):
-  global currentState
+ # global currentState
   current_time = time.localtime()
   cur_time_str = time.strftime('%a, %d %b %Y %H:%M:%S', current_time)
 
-  if(GPIO.input(channel)==0 & currentState == 1):
+  if(GPIO.input(channel)==0):# & currentState == 1):
     print cur_time_str, "Water level is too low"
-    currentState = 0
-  elif(GPIO.input(channel)==1 & currentState == 1):
+    #currentState = 0
+  elif(GPIO.input(channel)==1):# & currentState == 1):
     print cur_time_str, "11 Water level is high enough"
-    currentState = 1
-  elif(GPIO.input(channel)==0 & currentState == 0):
-    print cur_time_str, "00 Water level is too low"
-    currentState = 0
-  elif(GPIO.input(channel)==1 & currentState == 0):
-    print cur_time_str, "Water level is high enough"
-    currentState = 1
+    #currentState = 1
+#  elif(GPIO.input(channel)==0 & currentState == 0):
+#    print cur_time_str, "00 Water level is too low"
+#    currentState = 0
+#  elif(GPIO.input(channel)==1 & currentState == 0):
+#    print cur_time_str, "Water level is high enough"
+#    currentState = 1
 #  else:
 #    currentState = 1
 #  print('Water switch pressed!')
 #  print('Note how the bouncetime affects the button press')
 
-print "Water level probe started."
+current_time = time.localtime()
+cur_time_str = time.strftime('%a, %d %b %Y %H:%M:%S', current_time)
+
+print "Water level probe started at ", cur_time_str
 print "When the water level drops to the bottom of the sensor, "
 print "'Water level is too low' will be displayed."
 print "Once the level is back to above the sensor 'Water level"

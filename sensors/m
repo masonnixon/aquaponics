@@ -1,0 +1,8 @@
+#!/bin/bash   
+#PATH_TO_BIN="/home/pi/repo/aquaponics.git/sensors/"
+#STR="Starting the water level probe..."
+#echo $STR
+#cd $PATH_TO_BIN
+echo "Starting multitail of log files..."
+multitail -f -n 5 -m 5 /var/log/temperature.log -f -n 5 -m 5 /var/log/water_level.log
+
