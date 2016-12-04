@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #coding: utf8
 
+import time
 import RPi.GPIO as GPIO
 #set up GPIO using BCM numbering
 GPIO.setmode(GPIO.BCM)
@@ -16,10 +17,13 @@ while True:
 #  printFunction(0)
   #if(GPIO.input(23) ==1):
   #  print('Button 1 pressed')
+  current_time = time.localtime()
+  cur_time_str = time.strftime('%a, %d %b %Y %H:%M:%S', current_time)
+
   GPIO.wait_for_edge(23, GPIO.RISING)
-  print('Water level is too low')
+  print(cur_time_str,'Water level is too low')
   GPIO.wait_for_edge(23, GPIO.FALLING)
-  print('Water level is high enough')
+  print(cur_time_str,'Water level is high enough')
 
 GPIO.cleanup()
 GPIO.remove_event_detect(23)

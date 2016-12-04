@@ -1,0 +1,6 @@
+#!/bin/bash   
+PATH_TO_BIN="/home/pi/repo/aquaponics.git/sensors/"
+STR="Starting the water level probe..."
+echo $STR
+cd $PATH_TO_BIN
+python waterFloat.py
