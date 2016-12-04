@@ -34,10 +34,12 @@ def read_temp(index):
         return retVals[1], temp_f
 	
 while True:
+	current_time = time.localtime()
+	cur_time_str = time.strftime('%a, %d %b %Y %H:%M:%S', current_time)
 	numSensors = len(glob.glob(base_dir + '*'))
 	for i in range(0,numSensors-1):
             tempVals = read_temp(i)
 	#	print i
-	    print "Sensor ",i," (Device: ",tempVals[0],"): ",tempVals[1],"F "	
+	    print cur_time_str," Sensor ",i," (Device: ",tempVals[0],"): ",tempVals[1],"F "	
 	print "\n"
 	time.sleep(1)
