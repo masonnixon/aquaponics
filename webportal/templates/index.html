@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="scripts/scripts.js"></script>
-<link rel="stylesheet" type="text/css" href="styles/style.css">
+<script src="{{url_for('static', filename='scripts/scripts.js')}}"></script>
+<script type="text/javascript" src="http://kozea.github.com/pygal.js/javascripts/svg.jquery.js"></script>
+<script type="text/javascript" src="http://kozea.github.com/pygal.js/javascripts/pygal-tooltips.js"></script>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/style.css')}}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body onload="myFunction()">
@@ -153,13 +155,16 @@
 		</table>
 	  </div>
 	  <div class="B">
-		<p><img style='height: 100%; width: 100%; object-fit: contain' src = "images/greenhouseFloorplan.png", alt="Greenhouse Floorplan"></p>  
+		<p><img style='height: 100%; width: 100%; object-fit: contain' src = "{{url_for('static', filename='images/greenhouseFloorplan.png')}}", alt="Greenhouse Floorplan"></p>  
 	  </div>
 	  <div class="C">
 		[Placeholder]
 	  </div>
 	  <div class="D">
+		<!--
 		<img style='height: 100%; width: 100%; object-fit: contain' src = "images/simulatedPlotData.png" alt="Plot Data">
+		-->
+		{{ bar_chart.render()|safe }}
 	  </div>	  
 	</div>
 </div>
@@ -232,7 +237,8 @@
 		</table>
 	  </div>
 	  <div class="rightBox">
-		<img style='height: 100%; width: 100%; object-fit: contain' src = "images/simulatedPlotData.png" alt="Plot Data">
+		{{ bar_chart.render()|safe }}
+		<!-- <img style='height: 100%; width: 100%; object-fit: contain' src = "images/simulatedPlotData.png" alt="Plot Data"> -->
 	  </div>
 	</div>
 </div>
@@ -504,9 +510,10 @@
 <div id="CameraFeed" class="tabcontent">
 	<p>
 	
-	<img src = "images/simulatedCamFeed.png", alt = "Camera feed">
+
+	 <!--<img src = "{{url_for('static', filename='images/simulatedCamFeed.png')}}", alt = "Camera feed"> -->
 	
-	 <!--<iframe src="http://192.168.1.119/videostream.cgi?user=admin&pwd=123456&resolution=32&rate=0" height="500" width="700" style="='object-fit: contain; border:none;"></iframe> -->
+	 <iframe src="http://192.168.1.119/videostream.cgi?user=admin&pwd=123456&resolution=32&rate=0" height="500" width="700" style="='object-fit: contain; border:none;"></iframe> 
 	 
 	 <!-- Direct feed: http://192.168.1.119/videostream.cgi?user=admin&pwd=123456&resolution=32&rate=0 -->
 </div> 
