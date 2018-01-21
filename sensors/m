@@ -4,5 +4,9 @@
 #echo $STR
 #cd $PATH_TO_BIN
 echo "Starting multitail of log files..."
-multitail -f -n 5 -m 5 /var/log/temperature.log -f -n 5 -m 5 /var/log/water_level.log
+echo "Start temp"
+sudo t > /var/log/temperature.log &
+echo "Start water level"
+sudo f > /var/log/water_level.log &
+multitail -f /var/log/temperature.log -f /var/log/water_level.log
 

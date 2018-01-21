@@ -61,13 +61,13 @@ try:
 #     current_time = time.localtime()
 #     cur_time_str = time.strftime('%a, %d %b %Y %H:%M:%S', current_time)
      #print cur_time_str
-     GPIO.wait_for_edge(23, GPIO.FALLING)
+     GPIO.wait_for_edge(23, GPIO.RISING)
      current_time = time.localtime()
      cur_time_str = time.strftime('%a, %d %b %Y %H:%M:%S', current_time)
      print cur_time_str, "Water level is too low"
      time.sleep(0.3)
 
-     GPIO.wait_for_edge(23, GPIO.RISING)
+     GPIO.wait_for_edge(23, GPIO.FALLING)
      current_time = time.localtime()
      cur_time_str = time.strftime('%a, %d %b %Y %H:%M:%S', current_time)
      print cur_time_str, "Water level is high enough"
