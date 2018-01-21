@@ -1,0 +1,234 @@
+ /* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+} 
+
+/* fade in the tab content*/
+.tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Style the flex container for Floorplans */
+.box{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}    
+
+.flex-items-default {
+    width: 300px;
+    height: 250px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 0;
+}
+   
+.A {
+    width: 25%;
+}
+  
+.B {
+    width: 70%;
+}
+  
+
+.C {
+    width: 25%;
+}
+  
+.D {
+    width: 70%;
+}
+
+/* We tell all items to be 100% width, via flex-basis */
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.header {
+  background: tomato;
+}
+
+.footer {
+  background: lightgreen;
+}
+
+.main-1 {
+  text-align: left;
+  background: deepskyblue;
+}
+
+.main-2 {
+  text-align: left;
+  background: white;
+}
+
+.aside-1 {
+  background: gold;
+}
+
+.aside-2 {
+  background: hotpink;
+}
+
+/* We rely on source order for mobile-first approach
+ * in this case:
+ * 1. header
+ * 1.5. legend
+ * 2. article
+ * 3. aside 1
+ * 4. aside 2
+ * 5. footer
+ */
+
+/* Medium screens */
+@media all and (min-width: 600px) {
+  /* We tell both sidebars to share a row */
+  .aside { flex: 1 auto; }
+  .main { flex: 1 auto; }
+}
+
+/* Large screens */
+@media all and (min-width: 1400px) {
+  /* We invert order of first sidebar and main
+   * And tell the main element to take twice as much width as the other two sidebars 
+   */
+  .main-1  { flex: 2 0px; }
+  .main-2  { order: 1; } 
+  .main-1  { order: 2; }
+  .aside-1 { order: 3; } 
+  .aside-2 { order: 4; }
+  .footer  { order: 5; }
+}
+
+body {
+  padding: 2em; 
+}
+
+/* Style the flex container for Sensors/Actuators */
+.sensorsActuators {
+    display: flex;
+    flex-flow: row nowrap;
+	justify-content: start;
+	align-content: center;
+	align-items: center;
+	padding:5px;
+}
+
+.sensorsActuators div.leftBox {
+    order: 1;
+    flex: 1 1 auto;
+    align-self: flex-start;
+    min-width: 0px;
+    min-height: auto;
+	margin:5px;
+	width: 32%;
+}
+
+.sensorsActuators div.rightBox {
+    order: 2;
+    flex: 1 1 auto;
+    align-self: stretch;
+    min-width: 0px;
+    min-height: auto;
+	margin:5px;
+	width: 65%;
+}
+
+/* Switch button */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

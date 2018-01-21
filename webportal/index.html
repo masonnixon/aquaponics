@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="scripts/scripts.js"></script>
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body onload="myFunction()">
+
+
+<!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'FloorPlans')" id="defaultOpen">Floor Plans</button>
+  <button class="tablinks" onclick="openTab(event, 'Sensors')">Sensors</button>
+  <button class="tablinks" onclick="openTab(event, 'Actuators')">Actuators</button>
+  <button class="tablinks" onclick="openTab(event, 'CameraFeed')">Camera Feed</button>
+</div>
+
+<!-- Tab content -->
+<div id="FloorPlans" class="tabcontent">
+	<div class="box">
+	  <div class="A">	  
+		<table style="width:100%">
+		 <thead align="left">
+		 <tr><th colspan="4" align="center"><h2>Legend</h2></th></tr>
+		 <tr><th colspan="4" align="center"><h3>Sensors</h3></th></tr>
+		  <tr>
+		    <th>Type</th>
+			<th>Sensor</th>
+			<th>Description</th> 
+			<th>Status</th>
+		  </tr>
+		  <tr>
+			<td>Temp:</td>
+			<td>T1</td>
+			<td>Fish tank</td>
+			<td>85 deg F</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>T2</td>
+			<td>Grow bed 1</td>
+			<td>85 deg F</td>
+		  </tr>
+		  <tr>
+			<td>Level:</td>
+			<td>L1</td>
+			<td>Fish tank </td>
+			<td>0 trip(s)</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>L2</td>
+			<td>Sump tank 1</td>
+			<td>0 trip(s)</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>L3</td>
+			<td>Sump tank 2</td>
+			<td>0 trip(s)</td>
+		  </tr>
+		  <tr>
+			<td>Current:</td>
+			<td>C1</td>
+			<td>Heater current </td>
+			<td>1.1 A</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>C2</td>
+			<td>Pump current</td>
+			<td>3.2 A</td>
+		  </tr>	  
+		  <tr>
+			<td>Ph:</td>
+			<td>P1</td>
+			<td>Fish tank Ph </td>
+			<td>6.5</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>P2</td>
+			<td>Bed 3 Ph</td>
+			<td>7.1</td>
+		  </tr>	
+		</table>
+		
+		<table style="width:100%">
+		 <thead align="left">
+		 <tr><th colspan="4" align="center"><h3>Actuators</h3></th></tr>
+		  <tr>
+		    <th>Type</th>
+			<th>Actuator</th>
+			<th>Description</th> 
+			<th>Switch</th>
+		  </tr>
+		  <tr>
+			<td>Valve:</td>
+			<td>V1</td>
+			<td>Water heater valve</td>
+			<td>
+				<label class="switch">
+					<input type="checkbox" checked>
+					<span class="slider round"></span>
+				</label>
+			</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>V2</td>
+			<td>Refill valve</td>
+			<td>
+				<label class="switch">
+					<input type="checkbox">
+					<span class="slider round"></span>
+				</label>
+			</td>
+		  </tr>
+		  <tr>
+			<td>Relay:</td>
+			<td>R1</td>
+			<td>Fan 1 </td>
+			<td>
+				<label class="switch">
+					<input type="checkbox" checked>
+					<span class="slider round"></span>
+				</label>
+			</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>R2</td>
+			<td>Fan 2</td>
+			<td>
+				<label class="switch">
+					<input type="checkbox">
+					<span class="slider round"></span>
+				</label>
+			</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>R3</td>
+			<td>Light switch </td>
+			<td>
+				<label class="switch">
+					<input type="checkbox" checked>
+					<span class="slider round"></span>
+				</label>
+			</td>
+		  </tr>
+		</table>
+	  </div>
+	  <div class="B">
+		<p><img style='height: 100%; width: 100%; object-fit: contain' src = "images/greenhouseFloorplan.png", alt="Greenhouse Floorplan"></p>  
+	  </div>
+	  <div class="C">
+		[Placeholder]
+	  </div>
+	  <div class="D">
+		<img style='height: 100%; width: 100%; object-fit: contain' src = "images/simulatedPlotData.png" alt="Plot Data">
+	  </div>	  
+	</div>
+</div>
+
+<div id="Sensors" class="tabcontent">
+	<div class="sensorsActuators">
+	  <div class="leftBox">
+		<table style="height: 100%; width: 100%; object-fit: contain">
+		<thead align="left">
+		  <tr>
+		    <th>Type</th>
+			<th>Sensor</th>
+			<th>Description</th> 
+			<th>Status</th>
+		  </tr>
+		  <tr>
+			<td>Temp:</td>
+			<td>T1</td>
+			<td>Fish tank</td>
+			<td>85 deg F</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>T2</td>
+			<td>Grow bed 1</td>
+			<td>85 deg F</td>
+		  </tr>
+		  <tr>
+			<td>Level:</td>
+			<td>L1</td>
+			<td>Fish tank </td>
+			<td>0 trip(s)</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>L2</td>
+			<td>Sump tank 1</td>
+			<td>0 trip(s)</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>L3</td>
+			<td>Sump tank 2</td>
+			<td>0 trip(s)</td>
+		  </tr>
+		  <tr>
+			<td>Current:</td>
+			<td>C1</td>
+			<td>Heater current </td>
+			<td>1.1 A</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>C2</td>
+			<td>Pump current</td>
+			<td>3.2 A</td>
+		  </tr>	  
+		  <tr>
+			<td>Ph:</td>
+			<td>P1</td>
+			<td>Fish tank Ph </td>
+			<td>6.5</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>P2</td>
+			<td>Bed 3 Ph</td>
+			<td>7.1</td>
+		  </tr>	
+		</table>
+	  </div>
+	  <div class="rightBox">
+		<img style='height: 100%; width: 100%; object-fit: contain' src = "images/simulatedPlotData.png" alt="Plot Data">
+	  </div>
+	</div>
+</div>
+
+<div id="Actuators" class="tabcontent">
+	<div class="sensorsActuators">
+	  <div class="leftBox">
+		<table style="width:100%">
+		 <thead align="left">
+		 <tr><th colspan="4" align="center"><h3>Actuators</h3></th></tr>
+		  <tr>
+		    <th>Type</th>
+			<th>Actuator</th>
+			<th>Description</th> 
+			<th>Switch</th>
+			<th>Associated Sensor Value(s)</th>
+		  </tr>
+		  <tr>
+			<td>Valve:</td>
+			<td>V1</td>
+			<td>Water heater valve</td>
+			<td>
+				<label class="switch">
+					<input type="checkbox" checked>
+					<span class="slider round"></span>
+				</label>
+			</td>
+			<td>T1: 85 deg F</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>V2</td>
+			<td>Refill valve</td>
+			<td>
+				<label class="switch">
+					<input type="checkbox">
+					<span class="slider round"></span>
+				</label>
+			</td>
+			<td>L2: 10 trip(s)<br>C1: 3.2 A</td>
+		  </tr>
+		  <tr>
+			<td>Relay:</td>
+			<td>R1</td>
+			<td>Fan 1 </td>
+			<td>
+				<label class="switch">
+					<input type="checkbox" checked>
+					<span class="slider round"></span>
+				</label>
+			</td>
+			<td>T1: 75 deg F<br>C1: 3.2 A</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>R2</td>
+			<td>Fan 2</td>
+			<td>
+				<label class="switch">
+					<input type="checkbox">
+					<span class="slider round"></span>
+				</label>
+			</td>
+			<td>P1: 8<br>C1: 3.2 A</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>R3</td>
+			<td>Light switch </td>
+			<td>
+				<label class="switch">
+					<input type="checkbox" checked>
+					<span class="slider round"></span>
+				</label>
+			</td>
+			<td>C2: 1.2 A</td>
+		  </tr>
+		</table>
+	  </div>
+	  
+	  <div class="rightBox">
+		<table style="width:100%">
+		 <thead align="left">
+		 <tr><th align="center"><h3>Automated Functions</h3></th></tr>
+		  <tr><td>
+		    If 
+			<select>
+			  <option value="volvo">T1</option>
+			  <option value="saab">T2</option>
+			  <option value="opel">L1</option>
+			  <option value="audi">L2</option>
+			</select>
+			status is 
+			<select>
+			  <option value="volvo"><</option>
+			  <option value="saab">></option>
+			  <option value="opel">>=</option>
+			  <option value="audi"><=</option>
+			  <option value="t">==</option>
+			</select>
+			<input type="text" name="sensorValue" value="85 degF">
+			then 
+			<select>
+			  <option value="volvo">V1</option>
+			  <option value="saab">V2</option>
+			  <option value="opel">R1</option>
+			  <option value="audi">R2</option>
+			</select>
+			set to 
+			<select>
+			  <option value="volvo">ON/OPEN</option>
+			  <option value="saab">OFF/CLOSE</option>
+			</select>
+			until 
+			<select>
+			  <option value="volvo">T1</option>
+			  <option value="saab">T2</option>
+			  <option value="opel">L1</option>
+			  <option value="audi">L2</option>
+			</select>	
+			status is 
+						<select>
+			  <option value="volvo"><</option>
+			  <option value="saab">></option>
+			  <option value="opel">>=</option>
+			  <option value="audi"><=</option>
+			  <option value="t">==</option>
+			</select>
+			<input type="text" name="sensorValue" value="85 degF">.<br>
+		  </td></tr>
+		  
+		  <tr><td>
+			If 
+			<select>
+			  <option value="volvo">T1</option>
+			  <option value="saab">T2</option>
+			  <option value="opel">L1</option>
+			  <option value="audi">L2</option>
+			</select>
+			status is 
+			<select>
+			  <option value="volvo"><</option>
+			  <option value="saab">></option>
+			  <option value="opel">>=</option>
+			  <option value="audi"><=</option>
+			  <option value="t">==</option>
+			</select>
+			<input type="text" name="sensorValue" value="85 degF">
+			then 
+			<select>
+			  <option value="volvo">V1</option>
+			  <option value="saab">V2</option>
+			  <option value="opel">R1</option>
+			  <option value="audi">R2</option>
+			</select>
+			set to 
+			<select>
+			  <option value="volvo">ON/OPEN</option>
+			  <option value="saab">OFF/CLOSE</option>
+			</select>
+			until 			
+			<input type="text" name="sensorValue" value="240">
+			<select>
+			  <option value="volvo">seconds</option>
+			  <option value="saab">minutes</option>
+			  <option value="opel">hours</option>
+			  <option value="audi">days</option>
+			</select>
+			have passed.<br>
+		  </td></tr>
+		  
+		  		  <tr><td>
+		    If 
+			<select>
+			  <option value="volvo">T1</option>
+			  <option value="saab">T2</option>
+			  <option value="opel">L1</option>
+			  <option value="audi">L2</option>
+			</select>
+			status is 
+			<select>
+			  <option value="volvo"><</option>
+			  <option value="saab">></option>
+			  <option value="opel">>=</option>
+			  <option value="audi"><=</option>
+			  <option value="t">==</option>
+			</select>
+			<input type="text" name="sensorValue" value="85 degF">
+			then 
+			<select>
+			  <option value="volvo">V1</option>
+			  <option value="saab">V2</option>
+			  <option value="opel">R1</option>
+			  <option value="audi">R2</option>
+			</select>
+			set to 
+			<select>
+			  <option value="volvo">ON/OPEN</option>
+			  <option value="saab">OFF/CLOSE</option>
+			</select>
+			until 
+			<select>
+			  <option value="volvo">T1</option>
+			  <option value="saab">T2</option>
+			  <option value="opel">L1</option>
+			  <option value="audi">L2</option>
+			</select>	
+			status is 
+						<select>
+			  <option value="volvo"><</option>
+			  <option value="saab">></option>
+			  <option value="opel">>=</option>
+			  <option value="audi"><=</option>
+			  <option value="t">==</option>
+			</select>
+			<input type="text" name="sensorValue" value="85 degF">.<br>
+		  </td></tr>
+		  <tr><td>
+			If 
+			<select>
+			  <option value="volvo">T1</option>
+			  <option value="saab">T2</option>
+			  <option value="opel">L1</option>
+			  <option value="audi">L2</option>
+			</select>
+			status is 
+			<select>
+			  <option value="volvo"><</option>
+			  <option value="saab">></option>
+			  <option value="opel">>=</option>
+			  <option value="audi"><=</option>
+			  <option value="t">==</option>
+			</select>
+			<input type="text" name="sensorValue" value="85 degF">
+			then 
+			<select>
+			  <option value="volvo">V1</option>
+			  <option value="saab">V2</option>
+			  <option value="opel">R1</option>
+			  <option value="audi">R2</option>
+			</select>
+			set to 
+			<select>
+			  <option value="volvo">ON/OPEN</option>
+			  <option value="saab">OFF/CLOSE</option>
+			</select>
+			until 			
+			<input type="text" name="sensorValue" value="240">
+			<select>
+			  <option value="volvo">seconds</option>
+			  <option value="saab">minutes</option>
+			  <option value="opel">hours</option>
+			  <option value="audi">days</option>
+			</select>
+			have passed.<br>
+		  </td></tr>
+		  
+		  <tr><td><br>
+			<b>Example:<b><br> 
+			If [sensor] status is [condition][status], then [Actuator] set to [state] until: <br>
+			1) [sensor] status is [condition] [status].<br>
+			2) [timeout][time unit] has passed.<br>
+		  </td></tr>		  
+		</table>
+	  </div>
+	</div>
+</div> 
+
+<div id="CameraFeed" class="tabcontent">
+	<p>
+	
+	<img src = "images/simulatedCamFeed.png", alt = "Camera feed">
+	
+	 <!--<iframe src="http://192.168.1.119/videostream.cgi?user=admin&pwd=123456&resolution=32&rate=0" height="500" width="700" style="='object-fit: contain; border:none;"></iframe> -->
+	 
+	 <!-- Direct feed: http://192.168.1.119/videostream.cgi?user=admin&pwd=123456&resolution=32&rate=0 -->
+</div> 
+
+
+
+</body>
+</html>
