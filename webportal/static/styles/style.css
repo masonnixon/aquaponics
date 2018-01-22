@@ -1,3 +1,4 @@
+/* #########Tab styles######## */
  /* Style the tab */
 .tab {
     overflow: hidden;
@@ -12,7 +13,7 @@
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
+    padding: 10px 12px;
     transition: 0.3s;
 }
 
@@ -29,7 +30,7 @@
 /* Style the tab content */
 .tabcontent {
     display: none;
-    padding: 6px 12px;
+    padding: 6px 6px;
     border: 1px solid #ccc;
     border-top: none;
 } 
@@ -45,6 +46,7 @@
     to {opacity: 1;}
 }
 
+/* #########Flex layout configurations######## */
 /* Style the flex container for Floorplans */
 .box{
     display:flex;
@@ -53,6 +55,7 @@
     justify-content: flex-start;
     align-content: flex-start;
     align-items: flex-start;
+    overflow-x: auto;
 }    
 
 .flex-items-default {
@@ -80,38 +83,6 @@
     width: 70%;
 }
 
-/* We tell all items to be 100% width, via flex-basis */
-.wrapper > * {
-  padding: 10px;
-  flex: 1 100%;
-}
-
-.header {
-  background: tomato;
-}
-
-.footer {
-  background: lightgreen;
-}
-
-.main-1 {
-  text-align: left;
-  background: deepskyblue;
-}
-
-.main-2 {
-  text-align: left;
-  background: white;
-}
-
-.aside-1 {
-  background: gold;
-}
-
-.aside-2 {
-  background: hotpink;
-}
-
 /* We rely on source order for mobile-first approach
  * in this case:
  * 1. header
@@ -125,8 +96,10 @@
 /* Medium screens */
 @media all and (min-width: 600px) {
   /* We tell both sidebars to share a row */
-  .aside { flex: 1 auto; }
-  .main { flex: 1 auto; }
+/* https://css-tricks.com/almanac/properties/f/flex-shrink/ */
+/* The first item has flex: 1 1 20em (shorthand for flex-grow: 1, flex-shrink: 1, flex-basis: 20em) */
+  .A { flex: 1 1 20em }
+  .B { flex: 1 1 40em }
 }
 
 /* Large screens */
@@ -134,12 +107,9 @@
   /* We invert order of first sidebar and main
    * And tell the main element to take twice as much width as the other two sidebars 
    */
-  .main-1  { flex: 2 0px; }
-  .main-2  { order: 1; } 
-  .main-1  { order: 2; }
-  .aside-1 { order: 3; } 
-  .aside-2 { order: 4; }
-  .footer  { order: 5; }
+  .box  { flex: 2 0px; }
+  .A { order: 1; } 
+  .B  { order: 2; }
 }
 
 body {
@@ -149,7 +119,8 @@ body {
 /* Style the flex container for Sensors/Actuators */
 .sensorsActuators {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
+    overflow-x: auto;
 	justify-content: start;
 	align-content: center;
 	align-items: center;
@@ -160,8 +131,9 @@ body {
     order: 1;
     flex: 1 1 auto;
     align-self: flex-start;
-    min-width: 0px;
+    min-width: 300px;
     min-height: auto;
+    flex-direction: column;
 	margin:5px;
 	width: 32%;
 }
@@ -170,13 +142,14 @@ body {
     order: 2;
     flex: 1 1 auto;
     align-self: stretch;
-    min-width: 0px;
+    min-width: 500px;
     min-height: auto;
+    flex-direction: column;
 	margin:5px;
 	width: 65%;
 }
 
-/* Switch button */
+/* #########Switch button######### */
 .switch {
   position: relative;
   display: inline-block;

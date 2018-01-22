@@ -30,8 +30,8 @@ def get_weather_data(date='20140415', state='IA', city='Ames'):
  
     # create a bar chart
     title = 'Temps for %s, %s on %s' % (city, state, date)
-    bar_chart = pygal.Bar(width=1200, height=600,
-                          explicit_size=True, title=title,
+    bar_chart = pygal.Bar(margin=20, width=1200, height=600,
+                          explicit_size=False, title=title,
                           style=DarkSolarizedStyle,
                           disable_xml_declaration=True)
     bar_chart.x_labels = times

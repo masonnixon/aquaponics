@@ -158,14 +158,13 @@
 		<p><img style='height: 100%; width: 100%; object-fit: contain' src = "{{url_for('static', filename='images/greenhouseFloorplan.png')}}", alt="Greenhouse Floorplan"></p>  
 	  </div>
 	  <div class="C">
-		[Placeholder]
+		<!-- Placeholder -->		
 	  </div>
 	  <div class="D">
 		<!--
 		<img style='height: 100%; width: 100%; object-fit: contain' src = "images/simulatedPlotData.png" alt="Plot Data">
 		-->
-		{{ bar_chart.render()|safe }}
-	  </div>	  
+		</div>	  
 	</div>
 </div>
 
@@ -509,16 +508,12 @@
 
 <div id="CameraFeed" class="tabcontent">
 	<p>
+	<img style='height: 100%; width: 100%; object-fit: contain' src = "{{url_for('static', filename='images/simulatedCamFeed.png')}}", alt = "Camera feed"> 
 	
-
-	 <!--<img src = "{{url_for('static', filename='images/simulatedCamFeed.png')}}", alt = "Camera feed"> -->
-	
-	 <iframe src="http://192.168.1.119/videostream.cgi?user=admin&pwd=123456&resolution=32&rate=0" height="500" width="700" style="='object-fit: contain; border:none;"></iframe> 
+	<!-- <iframe style='height: 100%; width: 100%; object-fit: contain' src="http://192.168.1.119/videostream.cgi?user=admin&pwd=123456&resolution=32&rate=0" height="500" width="700" style="='object-fit: contain; border:none;"></iframe> -->
 	 
-	 <!-- Direct feed: http://192.168.1.119/videostream.cgi?user=admin&pwd=123456&resolution=32&rate=0 -->
+	<!-- Direct feed: http://192.168.1.119/videostream.cgi?user=admin&pwd=123456&resolution=32&rate=0 -->
 </div> 
-
-
 
 </body>
 </html>
