@@ -1,7 +1,7 @@
 Starting from Rasbian Lite
 
 username: aqua
-password: aqua123
+password: [...]
 set static ip 192.168.1.85 or nmap -v -sn 192.168.1.0/24
 hostname aquaponics-pi
 
